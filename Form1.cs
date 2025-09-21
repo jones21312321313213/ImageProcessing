@@ -121,7 +121,6 @@ namespace ImageProcessing
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             pictureBox2.Image.Save(saveFileDialog1.FileName);
-            MessageBox.Show("Image saved");
         }
 
         private void saveImageToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,6 +135,57 @@ namespace ImageProcessing
             saveFileDialog1.Filter = "JPEG Image|*.jpg|PNG Image|*.png|Bitmap|*.bmp";
 
             saveFileDialog1.ShowDialog();
+        }
+
+        private void histogramToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (orig == null)
+            {
+                MessageBox.Show("No image");
+                return;
+            }
+            else
+            {
+                Bitmap newPic = new Bitmap(orig.Width, orig.Height);
+                int[] counting = new int[256];
+                for (int i = 0; i < orig.Width; i++)
+                {
+                    for(int j = 0; j < orig.Height; j++)
+                    {
+                        Color p = orig.GetPixel(i, j);
+
+                        int a = (p.R + p.G + p.B) / 3;
+                        //int b = (int)((p.R * 0.3) + (p.G * 0.59) + (p.B * 0.11));
+
+                        Color g = Color.FromArgb(a, a, a);
+
+                        newPic.SetPixel(i, j, g);
+
+
+                        counting[a]++;//using array to count up pixles of same levels
+                    }
+                }
+
+
+                // Plot the values of the array on a bitmap graph
+                int graphWidth = 256;
+                int graphHeight = 256;
+                Bitmap histogram = new Bitmap(graphWidth, graphHeight);
+                int maxCount = counting.Max();
+
+                for (int x = 0; x < 256; x++)
+                {
+                    int barHeight = (int)((counting[x] / (float)maxCount) * graphHeight);
+
+                    for (int y = graphHeight - 1; y >= graphHeight - barHeight; y--)
+                    {
+                        histogram.SetPixel(x, y, Color.Black);
+                    }
+                }
+
+                pictureBox2.Image = histogram;
+
+            }
         }
     }
 }
