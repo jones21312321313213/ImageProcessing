@@ -171,14 +171,16 @@ namespace ImageProcessing
                 int graphWidth = 256;
                 int graphHeight = 256;
                 Bitmap histogram = new Bitmap(graphWidth, graphHeight);
-                int maxCount = counting.Max();
+                int maxCount = counting.Max(); 
 
                 for (int x = 0; x < 256; x++)
                 {
-                    int barHeight = (int)((counting[x] / (float)maxCount) * graphHeight);
+                                                // calculate height                      
+                    int barHeight = (int)((counting[x] / (float)maxCount) * graphHeight); // <-- scales it to the pixel height of the bitmap
 
+                    //starts from the bottom of the bitmap
                     for (int y = graphHeight - 1; y >= graphHeight - barHeight; y--)
-                    {
+                    {//draws the vertical bar for this graph
                         histogram.SetPixel(x, y, Color.Black);
                     }
                 }
@@ -222,6 +224,23 @@ namespace ImageProcessing
 
                 pictureBox2.Image = newPic;
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
