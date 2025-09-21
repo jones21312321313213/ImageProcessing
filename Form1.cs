@@ -187,5 +187,41 @@ namespace ImageProcessing
 
             }
         }
+
+        private void sepiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(orig == null)
+            {
+                MessageBox.Show("No image");
+                return;
+            }
+            else
+            {
+                Bitmap newPic = new Bitmap(orig.Width, orig.Height);
+
+                for(int i = 0; i < orig.Width; i++)
+                {
+                    for(int j =0; j < orig.Height; j++)
+                    {
+                        Color p = orig.GetPixel(i, j);
+
+                        int r = (int)(p.R * 0.393 + p.G * 0.769 + p.B * 0.189);
+                        int gg = (int)(p.R * 0.349 + p.G * 0.686 + p.B * 0.168);
+                        int b = (int)(p.R * 0.272 + p.G * 0.534 + p.B * 0.131);
+
+                        // make sure none of these will go beyond 255
+                        r = Math.Min(255, r);
+                        gg = Math.Min(255, gg);
+                        b = Math.Min(255, b);
+
+                        Color s =  Color.FromArgb(r, gg, b);
+
+                        newPic.SetPixel(i, j, s);
+                    }
+                }
+
+                pictureBox2.Image = newPic;
+            }
+        }
     }
 }
