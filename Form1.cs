@@ -39,6 +39,7 @@ namespace ImageProcessing
             if(orig == null)
             {
                 MessageBox.Show("No image");
+                return;
             }
             else
             {           
@@ -62,6 +63,7 @@ namespace ImageProcessing
             if (orig == null)
             {
                 MessageBox.Show("No image");
+                return;
             }
             else
             {
@@ -90,6 +92,7 @@ namespace ImageProcessing
             if(orig == null)
             {
                 MessageBox.Show("No image");
+                return;
             }
             else
             {
@@ -113,6 +116,26 @@ namespace ImageProcessing
 
                 pictureBox2.Image = newPic;
             }
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            pictureBox2.Image.Save(saveFileDialog1.FileName);
+            MessageBox.Show("Image saved");
+        }
+
+        private void saveImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pictureBox2.Image == null)
+            {
+                MessageBox.Show("No image");
+                return;
+            }
+
+            saveFileDialog1.Title = "Save Image";
+            saveFileDialog1.Filter = "JPEG Image|*.jpg|PNG Image|*.png|Bitmap|*.bmp";
+
+            saveFileDialog1.ShowDialog();
         }
     }
 }
