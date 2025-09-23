@@ -11,3 +11,10 @@ C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.p
 C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.exe.config
 C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.Form2.resources
 C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.Form3.resources
+C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\bin\Debug\AForge.dll
+C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\bin\Debug\AForge.Video.dll
+C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\bin\Debug\AForge.xml
+C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\bin\Debug\AForge.Video.xml
+C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\obj\Debug\ImagePro.C60485DA.Up2Date
