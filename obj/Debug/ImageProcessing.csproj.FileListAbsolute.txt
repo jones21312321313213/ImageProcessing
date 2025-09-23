@@ -10,3 +10,4 @@ C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.e
 C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.pdb
 C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.exe.config
 C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.Form2.resources
+C:\Users\zyla\IntSys\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.Form3.resources
