@@ -394,13 +394,9 @@ namespace ImageProcessing
 
         }
 
-
-
-
         public static bool Conv3x3(Bitmap b, ConvMatrix m)
 
         {
-
             // Avoid divide by zero errors 
             if (0 == m.Factor)
                 return false; Bitmap
